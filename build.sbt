@@ -1,4 +1,4 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.2.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.13.14"
 
@@ -7,7 +7,7 @@ lazy val root = (project in file("."))
     name := "scala-design-patterns"
   )
 
-lazy val creationalPattern = (project in file("creational-pattern"))
+lazy val abstractFactoryPattern = (project in file("creational-pattern/abstract-factory"))
   .settings(
-    name := "scala-design-patterns-creational-pattern"
+    name := "scala-design-patterns-creational-abstract-factory-pattern"
   )
