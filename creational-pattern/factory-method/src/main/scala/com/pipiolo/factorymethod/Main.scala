@@ -1,4 +1,4 @@
-package com.pipiolo.creation
+package com.pipiolo.factorymethod
 
 import com.pipiolo.creation.factory.{ShapeFactory, ShapeType}
 
