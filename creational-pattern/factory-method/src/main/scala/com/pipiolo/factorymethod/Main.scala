@@ -1,7 +1,5 @@
 package com.pipiolo.factorymethod
 
-import com.pipiolo.creation.factory.{ShapeFactory, ShapeType}
-
 object Main extends App {
 
   // factory

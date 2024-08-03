@@ -1,4 +1,4 @@
-package com.pipiolo.creation.factory
+package com.pipiolo.factorymethod
 
 trait Shape {
   def draw(): Unit
