@@ -14,17 +14,22 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.bahavior.observer
 
-import com.pipiolo.factorymethod.ShapeType.ShapeType
+import scala.collection.mutable
 
-object ShapeFactory {
-  def createShape(shapeType: ShapeType): Option[Shape] = {
-    shapeType match {
-      case ShapeType.Circle => Some(new Circle)
-      case ShapeType.Square => Some(new Square)
-      case ShapeType.Triangle => Some(new Triangle)
-      case _ => None
-    }
+trait Subject {
+  private val observers: mutable.Set[Observer] = mutable.Set.empty
+
+  def addObserver(observer: Observer): Unit = {
+    observers.add(observer)
+  }
+
+  def removeObserver(observer: Observer): Unit = {
+    observers -= observer
+  }
+
+  def notifyObservers(): Unit = {
+    observers.foreach(_.update())
   }
 }

@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.bahavior.observer
 
-import com.pipiolo.factorymethod.ShapeType.ShapeType
+class ChromeObserver(weather: WeatherSubject) extends Observer {
+  weather.addObserver(this)
 
-object ShapeFactory {
-  def createShape(shapeType: ShapeType): Option[Shape] = {
-    shapeType match {
-      case ShapeType.Circle => Some(new Circle)
-      case ShapeType.Square => Some(new Square)
-      case ShapeType.Triangle => Some(new Triangle)
-      case _ => None
-    }
+  private var temperature = weather.getTemperature
+
+  override def update(): Unit = {
+    this.temperature = weather.getTemperature
   }
+
+  def getTemperature: Double = temperature
 }
