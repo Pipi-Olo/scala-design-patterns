@@ -14,8 +14,24 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.structure.pipeline
 
-class Square extends Shape {
-  override def draw(): Unit = println("Square.draw")
+import scala.util.Try
+import scala.xml.XML
+
+class XmlToPeopleConverter {
+  private val PERSON = "person"
+  private val NAME = "name"
+  private val AGE = "age"
+
+  def convert: String => Seq[Person] = { xmlString =>
+    (XML.loadString(xmlString) \\ PERSON).flatMap { person =>
+      Try {
+        val name = (person \ NAME).head.text
+        val age = (person \ AGE).head.text.toInt
+
+        Person(name, age)
+      }.toOption
+    }
+  }
 }

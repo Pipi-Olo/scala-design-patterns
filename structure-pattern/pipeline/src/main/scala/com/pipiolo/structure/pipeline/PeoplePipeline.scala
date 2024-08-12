@@ -14,8 +14,15 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.structure.pipeline
 
-class Circle extends Shape {
-  override def draw(): Unit = println("Circle.draw")
+import java.nio.file.Path
+
+class PeoplePipeline {
+  private val pathToXml = new PathToXmlConverter().convert
+  private val xmlToPeople = new XmlToPeopleConverter().convert
+
+  def process: Path => Seq[Person] = {
+    pathToXml.andThen(xmlToPeople)
+  }
 }
