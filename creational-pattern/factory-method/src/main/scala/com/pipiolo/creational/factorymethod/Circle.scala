@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.creational.factorymethod
 
-object Main extends App {
-  private val circle = ShapeFactory.createShape(ShapeType.Circle)
-  circle.foreach(_.draw())
-
-  private val square = ShapeFactory.createShape(ShapeType.Square)
-  square.foreach(_.draw())
-
-  private val triangle = ShapeFactory.createShape(ShapeType.Triangle)
-  triangle.foreach(_.draw())
+class Circle extends Shape {
+  override def draw(): Unit = println("Circle.draw")
 }

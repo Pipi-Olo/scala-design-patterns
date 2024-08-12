@@ -14,8 +14,14 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.creational.factorymethod
 
-class Triangle extends Shape {
-  override def draw(): Unit = println("Triangle.draw")
+trait Shape {
+  def draw(): Unit
+}
+
+object ShapeType extends Enumeration {
+  type ShapeType = Value
+
+  val Circle, Square, Triangle = Value
 }

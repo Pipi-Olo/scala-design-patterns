@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.creational.factorymethod
 
-import com.pipiolo.factorymethod.ShapeType.ShapeType
+import ShapeType.ShapeType
 
 object ShapeFactory {
   def createShape(shapeType: ShapeType): Option[Shape] = {

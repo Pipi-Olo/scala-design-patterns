@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-package com.pipiolo.factorymethod
+package com.pipiolo.creational.factorymethod
 
-class Square extends Shape {
-  override def draw(): Unit = println("Square.draw")
+class Triangle extends Shape {
+  override def draw(): Unit = println("Triangle.draw")
 }
